@@ -198,7 +198,7 @@ for line in pdb_list:
   print(line)
   file_name = line
   file_base = os.path.basename(file_name).split('_')[0]  
-  rmsf_file = open('/wynton/home/rotation/cmoore/best_ensembles/rmsfs/%s_rmsf.csv' %file_name)
+  #rmsf_file = open('/wynton/home/rotation/cmoore/best_ensembles/rmsfs/%s_rmsf.csv' %file_name)
   aligned_file = ('%s_aligned.pdb' %file_base)
   
   cluster_coords, water_list, waterModelCodebook, initialArray, apo_waterList = cluster_maker(aligned_file, initialArray)
@@ -232,10 +232,11 @@ for array in [big_x, big_y, big_z]:
   num += 1
 
 waterOccupancy = np.row_stack(waterOccupancy)
-variable, stable, unstable = colorCoder(InteractionFrequency, rmsfArray, waterOccupancy)
-np.save('varInteractions.npy', variable)
-np.save('stableInteractions.npy', stable)
-np.save('unstableInteractions.npy', unstable)
+np.save('waterOccupancy.npy', waterOccupancy)
+#variable, stable, unstable = colorCoder(InteractionFrequency, rmsfArray, waterOccupancy)
+#np.save('varInteractions.npy', variable)
+#np.save('stableInteractions.npy', stable)
+#np.save('unstableInteractions.npy', unstable)
 
 
 

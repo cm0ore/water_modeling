@@ -40,8 +40,8 @@ def rmsfArray(pdb_list):
 
 
 pdb_list = open(sys.argv[1])
-flexResFile = open(sys.argv[2])
-flexResList = flexRes(flexResFile)
+#flexResFile = open(sys.argv[2])
+#List = flexRes(flexResFile)
 bigRmsfArray, pdbs = rmsfArray(pdb_list)
 
 stdDevArray = np.std(bigRmsfArray, axis=0)
@@ -67,7 +67,7 @@ cbar = ax.figure.colorbar(im, orientation='vertical', pad=0.05, fraction=0.005)
 cbar.ax.set_ylabel('RMSF', rotation=-90, va="bottom")
 plt.savefig('seriesRMSFS.pdf', dpi=300)
 plt.show()
-flexResFile.close()  
+#flexResFile.close()  
 pdb_list.close()
 
     
